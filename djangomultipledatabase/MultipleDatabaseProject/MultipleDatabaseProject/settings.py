@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'MultipleDatabaseApp',
-    'Aqua'
+    'aqua',
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -91,11 +93,11 @@ DATABASES = {
         'USER':'root',
         'PASSWORD':'pranav',
     },
-    'Aqua':{
+    'aqua':{
         'NAME': 'djangodatabase',
-        'ENGINE': 'django.db.backends.postgresql',
-        'USER': 'myuser',
-        'PASSWORD': 'mypass'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'USER': 'postgres',
+        'PASSWORD': 'pranav',
      }
     
 }
@@ -144,4 +146,4 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DATABASE_ROUTERS=['routers.db_routers.AuthRouter','routers.db_routers.MultipleDatabaseApp','routers.db_routers.Aqua']
+DATABASE_ROUTERS=['MultipleDatabaseProject.routers.db_routers.AuthRouter','MultipleDatabaseProject.routers.db_routers.MultipleDatabaseApp','MultipleDatabaseProject.routers.db_routers.Aqua']
